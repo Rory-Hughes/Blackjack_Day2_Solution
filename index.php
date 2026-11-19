@@ -161,6 +161,9 @@
                     $message .= " {$p['name']} pushes.";
                 }
                 $_SESSION['players'][$i]['bet'] = 0;
+            } else if ($p['score'] == 21 && count($p['hand']) == 2) {
+                //Opening blackjack already paid out during the deal.
+                $anyWinner = true;
             }
         }
         $sound = $anyWinner ? "win.wav" : "lose.wav";
@@ -224,6 +227,12 @@
                     //Then set their bet to 0 — a settled bet is how the turn order
                     //knows to skip right past them.
                     //**********************************************
+                    if ($_SESSION['players'][$i]['score'] == 21) {
+                        $_SESSION['players'][$i]['money'] += $bet + (int)floor(1.5 * $bet);
+                        $_SESSION['players'][$i]['bet'] = 0;
+                        $message .= " {$p['name']} has blackjack!";
+                        $sound = "win.wav";
+                    }
                 }
 
                 //the dealer gets two cards as well
