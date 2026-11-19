@@ -85,6 +85,7 @@
                 //the table just vanishes. Give it back to its player before the
                 //bet gets zeroed out below!
                 //*******************************************
+                $_SESSION['players'][$i]['money'] += $p['bet'];
                 $_SESSION['players'][$i]['bet'] = 0;
             }
             $_SESSION['active'] = 0;
@@ -293,6 +294,12 @@
     //Think about it: why does the "no bet on the table" part matter?
     //What would happen without it when someone bets everything they have?
     //**********************************************************
+    foreach ($_SESSION['players'] as $i => $p) {
+        if ($p['money'] == 0 && $p['bet'] == 0) {
+            $_SESSION['players'][$i]['money'] = 100;
+            $message .= " {$p['name']} ran out of money. The house gives them \$100.";
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
