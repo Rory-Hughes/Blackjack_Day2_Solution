@@ -151,11 +151,13 @@
         foreach ($_SESSION['players'] as $i => $p) {
             if ($p['bet'] > 0) {
                 if ($_SESSION['dscore'] > 21 || $p['score'] > $_SESSION['dscore']) {
+                    $_SESSION['players'][$i]['money'] += 2 * $p['bet'];
                     $message .= " {$p['name']} wins!";
                     $anyWinner = true;
                 } else if ($p['score'] < $_SESSION['dscore']) {
                     $message .= " {$p['name']} loses.";
                 } else {
+                    $_SESSION['players'][$i]['money'] += $p['bet'];
                     $message .= " {$p['name']} pushes.";
                 }
                 $_SESSION['players'][$i]['bet'] = 0;
