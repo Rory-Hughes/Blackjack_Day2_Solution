@@ -147,10 +147,12 @@
         //Play "win.wav" if anyone at the table won, otherwise "lose.wav".
         //Careful: don't let a later loser overwrite somebody's win sound!
         //***********************************************************
+        $anyWinner = false;
         foreach ($_SESSION['players'] as $i => $p) {
             if ($p['bet'] > 0) {
                 if ($_SESSION['dscore'] > 21 || $p['score'] > $_SESSION['dscore']) {
                     $message .= " {$p['name']} wins!";
+                    $anyWinner = true;
                 } else if ($p['score'] < $_SESSION['dscore']) {
                     $message .= " {$p['name']} loses.";
                 } else {
@@ -159,6 +161,7 @@
                 $_SESSION['players'][$i]['bet'] = 0;
             }
         }
+        $sound = $anyWinner ? "win.wav" : "lose.wav";
     }
 
     //Moves play to the next player who still has a live bet.
@@ -255,6 +258,7 @@
                 //********** GROUP TASK 2 (part 2) **********
                 //A bust deserves the lose sound.
                 //*******************************************
+                $sound = "lose.wav";
                 $_SESSION['players'][$i]['bet'] = 0;
                 nextTurn();
             }
