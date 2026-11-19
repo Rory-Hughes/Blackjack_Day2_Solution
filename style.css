@@ -1,0 +1,103 @@
+/* Blackjack table styling — provided pre-built, students live-code the PHP/HTML */
+
+body {
+    background: #2e6b4f; /* felt green */
+    color: #f5f0e1;
+    font-family: Georgia, 'Times New Roman', serif;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    margin: 24px 0 8px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* The undealt deck: cards stack on top of each other, each offset
+   slightly to the right using the --i variable set in the PHP loop */
+.deck {
+    position: relative;
+    height: 105px;
+    width: 900px;
+}
+
+.undealt {
+    position: absolute;
+    top: 0;
+    width: 73px;
+    height: 102px;
+    left: calc(var(--i) * 5px);
+    border-radius: 4px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+}
+
+/* A hand of face-up cards, laid out in a row */
+.hand {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 6px;
+    height: 112px;
+    padding: 5px;
+    border: 2px solid rgba(245, 240, 225, 0.4);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.dealt {
+    height: 102px;
+    width: 73px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Each button lives in its own form; inline-block lets neighbouring
+   forms (Shuffle/Start, Hit/Stay) sit side by side in a row */
+form {
+    display: inline-block;
+    margin: 12px 10px 12px 0;
+}
+
+button {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #f5f0e1;
+    color: #1f4a36;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background: #ffd966; /* casino gold */
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* The bet and player-name boxes, styled to match the buttons */
+input[type="number"],
+input[type="text"] {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 8px;
+    width: 70px;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+input[type="text"] {
+    width: 150px;
+}
+
+/* Highlight whichever hand is currently being played */
+.hand.active {
+    border-color: #ffd966;
+    box-shadow: 0 0 10px rgba(255, 217, 102, 0.6);
+}

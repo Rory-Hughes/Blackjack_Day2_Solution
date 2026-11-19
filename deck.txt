@@ -1,0 +1,18 @@
+Paste this into your PHP instead of typing out all 52 cards by hand.
+Each card is an associative array with two keys:
+  'card'  - the image file name in the img folder
+  'value' - what the card is worth in blackjack (aces start at 11)
+
+$newDeck = [['card' => "2C.jpg", 'value' => 2], ['card' => "2D.jpg", 'value' => 2], ['card' => "2H.jpg", 'value' => 2], ['card' => "2S.jpg", 'value' => 2],
+            ['card' => "3C.jpg", 'value' => 3], ['card' => "3D.jpg", 'value' => 3], ['card' => "3H.jpg", 'value' => 3], ['card' => "3S.jpg", 'value' => 3],
+            ['card' => "4C.jpg", 'value' => 4], ['card' => "4D.jpg", 'value' => 4], ['card' => "4H.jpg", 'value' => 4], ['card' => "4S.jpg", 'value' => 4],
+            ['card' => "5C.jpg", 'value' => 5], ['card' => "5D.jpg", 'value' => 5], ['card' => "5H.jpg", 'value' => 5], ['card' => "5S.jpg", 'value' => 5],
+            ['card' => "6C.jpg", 'value' => 6], ['card' => "6D.jpg", 'value' => 6], ['card' => "6H.jpg", 'value' => 6], ['card' => "6S.jpg", 'value' => 6],
+            ['card' => "7C.jpg", 'value' => 7], ['card' => "7D.jpg", 'value' => 7], ['card' => "7H.jpg", 'value' => 7], ['card' => "7S.jpg", 'value' => 7],
+            ['card' => "8C.jpg", 'value' => 8], ['card' => "8D.jpg", 'value' => 8], ['card' => "8H.jpg", 'value' => 8], ['card' => "8S.jpg", 'value' => 8],
+            ['card' => "9C.jpg", 'value' => 9], ['card' => "9D.jpg", 'value' => 9], ['card' => "9H.jpg", 'value' => 9], ['card' => "9S.jpg", 'value' => 9],
+            ['card' => "10C.jpg", 'value' => 10], ['card' => "10D.jpg", 'value' => 10], ['card' => "10H.jpg", 'value' => 10], ['card' => "10S.jpg", 'value' => 10],
+            ['card' => "JC.jpg", 'value' => 10], ['card' => "JD.jpg", 'value' => 10], ['card' => "JH.jpg", 'value' => 10], ['card' => "JS.jpg", 'value' => 10],
+            ['card' => "QC.jpg", 'value' => 10], ['card' => "QD.jpg", 'value' => 10], ['card' => "QH.jpg", 'value' => 10], ['card' => "QS.jpg", 'value' => 10],
+            ['card' => "KC.jpg", 'value' => 10], ['card' => "KD.jpg", 'value' => 10], ['card' => "KH.jpg", 'value' => 10], ['card' => "KS.jpg", 'value' => 10],
+            ['card' => "AC.jpg", 'value' => 11], ['card' => "AD.jpg", 'value' => 11], ['card' => "AH.jpg", 'value' => 11], ['card' => "AS.jpg", 'value' => 11]];
