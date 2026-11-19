@@ -201,6 +201,7 @@
                 //(The shuffle handler shows how a sound gets played.)
                 //*******************************************
 
+                $sound = "deal.wav";
                 //take each bet and deal each player two cards.
                 //Like a real casino, the chips leave your stack as soon as you bet;
                 //winning pays the stake back plus the winnings
@@ -247,6 +248,7 @@
             //Play "deal.wav" here too — a hit is also a card being dealt.
             //*******************************************
 
+            $sound = "deal.wav";
             //a bust settles their bet (the stake never comes back) and ends their turn
             if ($_SESSION['players'][$i]['score'] > 21) {
                 $message = "{$_SESSION['players'][$i]['name']} busted!";
